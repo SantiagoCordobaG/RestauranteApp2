@@ -1,0 +1,27 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="64dp"
+    android:height="64dp"
+    android:viewportWidth="64"
+    android:viewportHeight="64">
+
+    <!-- Plato -->
+    <path
+        android:fillColor="@color/verde_oscuro"
+        android:pathData="M32,34 C22,34 14,40 14,48 C14,54 22,58 32,58 C42,58 50,54 50,48 C50,40 42,34 32,34 Z" />
+
+    <!-- Centro del plato -->
+    <path
+        android:fillColor="@color/turquesa_claro"
+        android:pathData="M32,40 C25,40 20,43 20,48 C20,51 25,53 32,53 C39,53 44,51 44,48 C44,43 39,40 32,40 Z" />
+
+    <!-- Tenedor -->
+    <path
+        android:fillColor="@color/verde_oscuro"
+        android:pathData="M18,8 L20,8 L20,24 L22,24 L22,8 L24,8 L24,24 C24,28 22,31 20,32 L20,56 L16,56 L16,32 C14,31 12,28 12,24 L12,8 L14,8 L14,24 L16,24 L16,8 Z" />
+
+    <!-- Cuchillo -->
+    <path
+        android:fillColor="@color/verde_oscuro"
+        android:pathData="M45,8 C49,13 51,20 51,28 C51,34 49,38 46,40 L46,56 L42,56 L42,8 Z" />
+
+</vector>
