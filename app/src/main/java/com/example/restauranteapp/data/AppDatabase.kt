@@ -8,15 +8,18 @@ import com.example.restauranteapp.model.Examen
 import com.example.restauranteapp.model.Plato
 import com.example.restauranteapp.model.Pedido
 import com.example.restauranteapp.model.DetallePedido
+import com.example.restauranteapp.model.ExamenParametro
 
 @Database(
-    entities = [Examen::class, Plato::class, Pedido::class, DetallePedido::class],
-    version = 4,
+    entities = [Examen::class, ExamenParametro::class, Plato::class,Pedido::class, DetallePedido::class],
+    version = 5,
     exportSchema = false
 )
 abstract class AppDatabase : RoomDatabase() {
 
     abstract fun examenDAO(): ExamenDAO
+
+    abstract fun examenParametroDAO(): ExamenParametroDAO
 
     abstract fun platoDAO(): PlatoDAO
     abstract fun pedidoDAO(): PedidoDAO

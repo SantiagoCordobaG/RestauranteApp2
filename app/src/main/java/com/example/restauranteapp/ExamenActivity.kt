@@ -150,7 +150,28 @@ class ExamenActivity : AppCompatActivity() {
                         }
                     }
 
+                    val btnParametros = Button(this@ExamenActivity).apply {
+                        text = "Parámetros"
+                        layoutParams = LinearLayout.LayoutParams(
+                            0,
+                            LinearLayout.LayoutParams.WRAP_CONTENT,
+                            1f
+                        )
+
+                        setOnClickListener {
+                            val intent = Intent(
+                                this@ExamenActivity,
+                                ExamenParametrosActivity::class.java
+                            )
+
+                            intent.putExtra("exa_id", examen.exa_id)
+                            intent.putExtra("exa_descripcion", examen.exa_descripcion)
+                            startActivity(intent)
+                        }
+                    }
+
                     filaBotones.addView(btnEditar)
+                    filaBotones.addView(btnParametros)
 
                     fila.addView(tv)
                     fila.addView(filaBotones)

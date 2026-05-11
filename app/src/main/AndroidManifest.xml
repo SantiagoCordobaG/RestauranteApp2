@@ -27,6 +27,11 @@
             android:exported="false"
             android:label="Registrar Examen"
             android:theme="@style/Theme.AppCompat.DayNight.NoActionBar" />
+        <activity
+            android:name=".ExamenParametrosActivity"
+            android:exported="false"
+            android:label="Parámetros del Examen"
+            android:theme="@style/Theme.AppCompat.DayNight.NoActionBar" />
 
         <activity
             android:name=".PedidoActivity"
