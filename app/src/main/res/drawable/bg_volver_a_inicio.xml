@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Botón especial para volver al inicio -->
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- Color claro para diferenciarlo del botón principal -->
+    <solid android:color="#FFFFFF" />
+
+    <!-- Borde verde oscuro -->
+    <stroke
+        android:width="2dp"
+        android:color="@color/boton_verde_oscuro" />
+
+    <!-- Esquinas redondeadas -->
+    <corners android:radius="18dp" />
+
+    <!-- Espaciado interno -->
+    <padding
+        android:left="12dp"
+        android:right="12dp"
+        android:top="8dp"
+        android:bottom="8dp" />
+
+</shape>

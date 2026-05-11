@@ -1,82 +1,268 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!-- Pantalla para registrar exámenes -->
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/scrollExamenes"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="20dp"
-    android:background="#2C5F2D">
+    android:background="@drawable/bg_fondo_examen"
+    android:fillViewport="true">
 
+    <!-- Contenedor principal -->
     <LinearLayout
         android:id="@+id/linearExamenes"
-        android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="24dp">
 
-        <TextView
-            android:text="Registro de Exámenes"
-            android:textSize="22sp"
-            android:textStyle="bold"
-            android:textColor="#FFFFFF"
-            android:layout_marginBottom="20dp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
-
-        <EditText
-            android:id="@+id/etDescripcionExamen"
-            android:hint="Descripción del examen"
-            android:inputType="text"
-            android:maxLength="100"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
-
-        <EditText
-            android:id="@+id/etValorExamen"
-            android:hint="Valor del examen"
-            android:inputType="number"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
-
-        <Spinner
-            android:id="@+id/spTipoExamen"
+        <!-- Encabezado de la pantalla -->
+        <LinearLayout
+            android:id="@+id/layoutHeaderExamen"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:entries="@array/tipos_examen_array"
-            android:layout_marginTop="8dp" />
+            android:orientation="vertical"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="20dp">
 
-        <Spinner
-            android:id="@+id/spEstadoExamen"
+            <TextView
+                android:id="@+id/txtTituloExamen"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Registro de Exámenes"
+                android:textColor="@color/gris_oscuro"
+                android:textSize="26sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/txtSubtituloExamen"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Completa los datos del examen y guarda el registro."
+                android:textColor="@color/blanco_suave"
+                android:textSize="14sp"
+                android:layout_marginTop="6dp" />
+
+        </LinearLayout>
+
+        <!-- Tarjeta del formulario -->
+        <LinearLayout
+            android:id="@+id/cardFormularioExamen"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:entries="@array/estados_array"
-            android:layout_marginTop="8dp" />
+            android:orientation="vertical"
+            android:background="@drawable/bg_tarjeta_blanca"
+            android:elevation="8dp"
+            android:padding="22dp">
 
-        <Button
-            android:id="@+id/btnGuardarExamen"
-            android:text="Guardar Examen"
-            android:layout_marginTop="16dp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            <!-- Campo descripción -->
+            <TextView
+                android:id="@+id/txtLabelDescripcion"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Descripción del examen"
+                android:textColor="@color/gris_oscuro"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                android:layout_marginBottom="6dp" />
 
-        <Button
-            android:id="@+id/btnVolverInicio"
-            android:text="Volver al inicio"
-            android:layout_marginTop="8dp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            <EditText
+                android:id="@+id/etDescripcionExamen"
+                android:layout_width="match_parent"
+                android:layout_height="52dp"
+                android:hint="Ej: Examen de sangre"
+                android:inputType="text"
+                android:maxLength="100"
+                android:textColor="@color/gris_oscuro"
+                android:textColorHint="@color/gris_medio"
+                android:textSize="15sp"
+                android:paddingStart="14dp"
+                android:paddingEnd="14dp"
+                android:background="@drawable/bg_input_claro" />
 
+            <!-- Campo valor -->
+            <TextView
+                android:id="@+id/txtLabelValor"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Valor del examen"
+                android:textColor="@color/gris_oscuro"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                android:layout_marginTop="14dp"
+                android:layout_marginBottom="6dp" />
+
+            <EditText
+                android:id="@+id/etValorExamen"
+                android:layout_width="match_parent"
+                android:layout_height="52dp"
+                android:hint="Ej: 25000"
+                android:inputType="number"
+                android:textColor="@color/gris_oscuro"
+                android:textColorHint="@color/gris_medio"
+                android:textSize="15sp"
+                android:paddingStart="14dp"
+                android:paddingEnd="14dp"
+                android:background="@drawable/bg_input_claro" />
+
+            <!-- Tipo de examen -->
+            <TextView
+                android:id="@+id/txtLabelTipo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Tipo de examen"
+                android:textColor="@color/gris_oscuro"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                android:layout_marginTop="14dp"
+                android:layout_marginBottom="6dp" />
+
+            <Spinner
+                android:id="@+id/spTipoExamen"
+                android:layout_width="match_parent"
+                android:layout_height="52dp"
+                android:entries="@array/tipos_examen_array"
+                android:paddingStart="10dp"
+                android:paddingEnd="10dp"
+                android:background="@drawable/bg_input_claro" />
+
+            <!-- Estado del examen -->
+            <TextView
+                android:id="@+id/txtLabelEstado"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Estado"
+                android:textColor="@color/gris_oscuro"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                android:layout_marginTop="14dp"
+                android:layout_marginBottom="6dp" />
+
+            <Spinner
+                android:id="@+id/spEstadoExamen"
+                android:layout_width="match_parent"
+                android:layout_height="52dp"
+                android:entries="@array/estados_array"
+                android:paddingStart="10dp"
+                android:paddingEnd="10dp"
+                android:background="@drawable/bg_input_claro" />
+
+            <!-- Botón guardar -->
+            <Button
+                android:id="@+id/btnGuardarExamen"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:text="Guardar examen"
+                android:textAllCaps="false"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:textColor="@color/blanco"
+                android:background="@drawable/bg_boton_verde_oscuro"
+                android:layout_marginTop="22dp" />
+
+            <!-- Botón volver -->
+            <Button
+                android:id="@+id/btnVolverInicio"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:text="Volver al inicio"
+                android:textAllCaps="false"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:textColor="@color/gris_oscuro"
+                android:background="@drawable/bg_volver_a_inicio"
+                android:layout_marginTop="12dp" />
+
+        </LinearLayout>
+
+        <!-- Separador visual -->
         <View
+            android:id="@+id/viewSeparador"
             android:layout_width="match_parent"
             android:layout_height="2dp"
-            android:background="#CCCCCC"
-            android:layout_marginVertical="16dp" />
+            android:background="@color/blanco_suave"
+            android:layout_marginTop="24dp"
+            android:layout_marginBottom="18dp" />
 
+        <!-- Título de registros -->
         <TextView
+            android:id="@+id/txtExamenesRegistrados"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:text="Exámenes registrados"
-            android:textSize="18sp"
+            android:textColor="@color/blanco"
+            android:textSize="20sp"
             android:textStyle="bold"
-            android:textColor="#FFFFFF"
-            android:layout_marginBottom="8dp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            android:layout_marginBottom="12dp" />
+
+        <!-- Tarjeta de ejemplo para examen registrado -->
+        <LinearLayout
+            android:id="@+id/cardExamenRegistrado"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@drawable/bg_tarjeta_blanca"
+            android:elevation="6dp"
+            android:padding="18dp"
+            android:layout_marginBottom="24dp">
+
+            <TextView
+                android:id="@+id/txtDescripcionRegistrada"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Descripción de prueba"
+                android:textColor="@color/gris_oscuro"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/txtDetalleRegistrado"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Valor: $1000\nTipo: Laboratorio\nEstado: Activo"
+                android:textColor="@color/gris_medio"
+                android:textSize="14sp"
+                android:lineSpacingExtra="3dp"
+                android:layout_marginTop="6dp" />
+
+            <!-- Botones pequeños de la tarjeta -->
+            <LinearLayout
+                android:id="@+id/layoutBotonesExamen"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="14dp">
+
+                <Button
+                    android:id="@+id/btnEditarExamen"
+                    android:layout_width="0dp"
+                    android:layout_height="48dp"
+                    android:layout_weight="1"
+                    android:text="Editar"
+                    android:textAllCaps="false"
+                    android:textSize="14sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/blanco"
+                    android:background="@drawable/bg_boton_verde_oscuro" />
+
+                <Space
+                    android:layout_width="10dp"
+                    android:layout_height="match_parent" />
+
+                <Button
+                    android:id="@+id/btnParametros"
+                    android:layout_width="0dp"
+                    android:layout_height="48dp"
+                    android:layout_weight="1"
+                    android:text="Parámetros"
+                    android:textAllCaps="false"
+                    android:textSize="14sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/gris_oscuro"
+                    android:background="@drawable/bg_boton_rosado" />
+
+            </LinearLayout>
+
+        </LinearLayout>
 
     </LinearLayout>
 

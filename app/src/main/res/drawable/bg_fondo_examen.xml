@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Fondo verde/turquesa para la pantalla de exámenes -->
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+    <gradient
+        android:startColor="@color/verde_oscuro"
+        android:endColor="@color/verde_agua"
+        android:angle="270" />
+</shape>

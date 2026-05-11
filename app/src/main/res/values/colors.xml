@@ -19,4 +19,7 @@
     <color name="blanco_suave">#F4FFFD</color>
     <color name="gris_oscuro">#263238</color>
     <color name="gris_medio">#6B7A7A</color>
+
+    <color name="input_claro">#F2FAF8</color>
+    <color name="borde_input">#D6E8E5</color>
 </resources>
