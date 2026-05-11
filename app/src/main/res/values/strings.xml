@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">RestauranteApp</string>
+
+    <string-array name="estados_array">
+        <item>Activo</item>
+        <item>Inactivo</item>
+    </string-array>
+
+    <string-array name="tipos_examen_array">
+        <item>Laboratorio</item>
+        <item>Imagenología</item>
+        <item>Clínico</item>
+        <item>Otro</item>
+    </string-array>
+</resources>
